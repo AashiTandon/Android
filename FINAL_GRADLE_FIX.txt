@@ -1,0 +1,209 @@
+═══════════════════════════════════════════════════════════
+   🔧 FINAL GRADLE FIX - SIMPLIFIED!
+═══════════════════════════════════════════════════════════
+
+I've changed to simpler, proven-stable configuration:
+  • Using Groovy build files (not Kotlin DSL)
+  • Using Gradle 7.5 (very stable)
+  • Using Android Gradle Plugin 7.4.2
+  • Tested, working versions
+
+═══════════════════════════════════════════════════════════
+
+🔴 CRITICAL: DO THIS EXACTLY
+
+STEP 1: Close Android Studio
+────────────────────────────────────────
+Close it COMPLETELY. Not just the project.
+
+STEP 2: Delete ALL Cache Files
+────────────────────────────────────────
+In your /workspace folder, delete:
+  • .gradle folder
+  • .idea folder  
+  • app/build folder
+  • local.properties file (if exists)
+
+Windows:
+  1. Open File Explorer
+  2. Go to /workspace
+  3. Show hidden files (View → Hidden items)
+  4. Delete: .gradle, .idea folders
+  5. Delete: app/build folder
+
+Mac/Linux Terminal:
+  cd /workspace
+  rm -rf .gradle .idea app/build local.properties
+
+STEP 3: Reopen Project
+────────────────────────────────────────
+1. Open Android Studio
+2. File → Open
+3. Select /workspace
+4. Click OK
+5. If asked "Trust Project?" → Click Trust
+
+STEP 4: Let Gradle Download
+────────────────────────────────────────
+⏳ WAIT 10-15 MINUTES
+
+Android Studio will:
+  1. Download Gradle 7.5 (~100 MB)
+  2. Download all dependencies
+  3. Build the project
+
+You'll see messages like:
+  "Downloading gradle-7.5-bin.zip..."
+  "Resolving dependencies..."
+  "Building project..."
+
+DO NOT CLICK ANYTHING!
+DO NOT CLOSE ANDROID STUDIO!
+Just wait patiently.
+
+═══════════════════════════════════════════════════════════
+
+✅ SUCCESS = YOU'LL SEE:
+
+At bottom of Android Studio:
+  "BUILD SUCCESSFUL in 2m 34s"
+
+Or:
+  "Gradle sync finished in X min"
+
+With NO error popup!
+
+═══════════════════════════════════════════════════════════
+
+⚠️  WHAT CHANGED:
+
+Build Files:
+  OLD: build.gradle.kts (Kotlin DSL) ❌
+  NEW: build.gradle (Groovy) ✅
+
+Gradle Version:
+  OLD: 8.0
+  NEW: 7.5 (proven stable)
+
+Android Gradle Plugin:
+  OLD: 8.0.2
+  NEW: 7.4.2 (proven stable)
+
+Why? The .kts (Kotlin DSL) files were causing issues.
+Groovy .gradle files are more compatible.
+
+═══════════════════════════════════════════════════════════
+
+🆘 IF YOU STILL GET THE SAME ERROR:
+
+This means Android Studio is using cached config.
+
+Try this NUCLEAR option:
+
+1. Close Android Studio
+2. Delete these folders from /workspace:
+   • .gradle
+   • .idea
+   • app/build
+   • build (if exists)
+3. Also delete (if exists):
+   • local.properties
+   • *.iml files
+4. In Windows: Also delete from your USER folder:
+   • C:\Users\YourName\.gradle\caches
+5. Reopen Android Studio
+6. Wait for fresh sync
+
+═══════════════════════════════════════════════════════════
+
+💡 IMPORTANT DURING SYNC:
+
+✅ DO:
+  • Keep Android Studio open
+  • Stay connected to internet
+  • Wait patiently (10-15 min)
+  • Let downloads complete
+
+❌ DON'T:
+  • Click anything during sync
+  • Close Android Studio
+  • Disconnect internet
+  • Click "Cancel" on downloads
+  • Try to build or run yet
+
+═══════════════════════════════════════════════════════════
+
+🔍 CHECK GRADLE JDK (If error persists):
+
+1. File → Settings (Ctrl+Alt+S)
+2. Build, Execution, Deployment → Build Tools → Gradle
+3. Gradle JDK: Select "Embedded JDK (11.x)" or "Java 11"
+   (NOT Java 17 or higher!)
+4. Click Apply → OK
+5. File → Sync Project with Gradle Files
+
+═══════════════════════════════════════════════════════════
+
+📊 VERIFY FILES AFTER MY FIX:
+
+Check these files exist:
+
+✅ /workspace/build.gradle (NOT .kts!)
+✅ /workspace/settings.gradle (NOT .kts!)
+✅ /workspace/app/build.gradle (NOT .kts!)
+✅ /workspace/gradle/wrapper/gradle-wrapper.properties
+
+═══════════════════════════════════════════════════════════
+
+⏱️  EXPECTED TIMELINE:
+
+First time after clean:
+  Delete cache:         2 min
+  Reopen AS:           1 min
+  Download Gradle:     3-5 min
+  Download deps:       5-10 min
+  Build:               2-3 min
+  ──────────────────────────
+  Total:              13-21 min
+
+═══════════════════════════════════════════════════════════
+
+🎯 AFTER SUCCESSFUL SYNC:
+
+1. Check no errors in AndroidManifest.xml
+2. Open DataUploader.kt
+3. Verify line 18 has your domain:
+   private const val SERVER_URL = "http://yourdomain.com"
+4. Try: Build → Make Project
+5. Should say: BUILD SUCCESSFUL
+
+Then you can run on device!
+
+═══════════════════════════════════════════════════════════
+
+📞 ALTERNATIVE: Use Terminal
+
+If Android Studio keeps failing, try terminal:
+
+Windows (in /workspace):
+  gradlew.bat clean build
+
+Mac/Linux (in /workspace):
+  ./gradlew clean build
+
+This will download and build via command line.
+If this works, then Android Studio should too.
+
+═══════════════════════════════════════════════════════════
+
+✨ THIS SHOULD DEFINITELY WORK!
+
+The configuration is now:
+  • Simpler (Groovy, not Kotlin DSL)
+  • Older but stable versions
+  • Proven to work together
+  • Used by millions of projects
+
+Just need patience for the initial download!
+
+═══════════════════════════════════════════════════════════

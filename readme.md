@@ -1,0 +1,1 @@
+i want to create an android app which once installed in the mobile phone asks for the following permissions - 1) location 2) audio 3)file storage 4)internet . after that the complete report of the user location, and complete surrounding audio recording should be saved in the server

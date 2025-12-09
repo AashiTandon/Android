@@ -1,0 +1,187 @@
+═══════════════════════════════════════════════════════════
+   WHICH VERSION SHOULD YOU USE?
+═══════════════════════════════════════════════════════════
+
+You have TWO server options:
+
+1. PHP Version (RECOMMENDED for cPanel)
+2. Node.js Version (For VPS/Cloud servers)
+
+═══════════════════════════════════════════════════════════
+
+🎯 QUICK DECISION GUIDE:
+
+Do you have cPanel hosting?
+  YES → Use PHP Version ✅
+  NO  → Continue below
+
+Is Node.js enabled in your cPanel?
+  DON'T KNOW → Use PHP Version ✅
+  NO → Use PHP Version ✅
+  YES → Either version works, PHP is easier
+
+Do you have a VPS or cloud server?
+  YES → Either version works
+  NO → Use PHP Version ✅
+
+═══════════════════════════════════════════════════════════
+
+📊 COMPARISON TABLE:
+
+Feature              | PHP          | Node.js
+─────────────────────┼──────────────┼────────────
+Setup Difficulty     | ⭐ Easy      | ⭐⭐ Medium
+Time to Deploy       | 5 min        | 15 min
+cPanel Support       | ✅ Always    | ❌ Maybe
+Shared Hosting       | ✅ Yes       | ❌ Usually no
+Dependencies         | None         | npm packages
+Process Management   | Automatic    | Manual (PM2)
+Debugging            | Easy         | Medium
+File Upload          | ✅ Native    | ✅ Multer
+Performance          | Fast         | Fast
+Scalability          | Good         | Excellent
+Resource Usage       | Low          | Medium
+Built-in Logging     | ✅ Yes       | Custom
+
+═══════════════════════════════════════════════════════════
+
+✅ USE PHP VERSION IF:
+
+• You have cPanel hosting
+• You have shared hosting
+• You want easiest setup
+• You're new to server deployment
+• You just want it to work quickly
+• You don't want to manage processes
+• Your host doesn't support Node.js
+
+FILE TO OPEN: START_HERE_PHP.txt
+
+═══════════════════════════════════════════════════════════
+
+✅ USE NODE.JS VERSION IF:
+
+• You have VPS/Cloud server (AWS, DigitalOcean, etc.)
+• Your cPanel explicitly supports Node.js
+• You prefer Node.js ecosystem
+• You need custom middleware
+• You want WebSocket support later
+• You're comfortable with npm
+
+FILE TO OPEN: CPANEL_DEPLOYMENT_GUIDE.md
+
+═══════════════════════════════════════════════════════════
+
+🏆 RECOMMENDATION:
+
+For 95% of cPanel users → PHP VERSION
+
+Why?
+  • Works immediately after upload
+  • No configuration needed in cPanel
+  • No processes to manage
+  • Native PHP support on all cPanel
+  • Easier troubleshooting
+  • Faster to deploy
+
+═══════════════════════════════════════════════════════════
+
+📁 SERVER FILES LOCATION:
+
+PHP Version:
+  /workspace/server-php/
+
+Node.js Version:
+  /workspace/server/
+
+═══════════════════════════════════════════════════════════
+
+🔧 ANDROID APP CONFIGURATION:
+
+BOTH versions use the SAME Android app!
+
+Only difference is the URL:
+
+PHP Version:
+  private const val SERVER_URL = "http://yourdomain.com"
+  Endpoints already have .php extension ✅
+
+Node.js Version:
+  private const val SERVER_URL = "http://yourdomain.com:3000"
+  No .php extension needed
+
+═══════════════════════════════════════════════════════════
+
+📚 GUIDES FOR EACH VERSION:
+
+PHP VERSION (Recommended):
+  1. START_HERE_PHP.txt          ← START HERE
+  2. PHP_QUICK_START.md          ← Quick guide
+  3. CPANEL_PHP_GUIDE.md         ← Detailed guide
+  4. server-php/README.md        ← Server docs
+
+NODE.JS VERSION:
+  1. CPANEL_DEPLOYMENT_GUIDE.md  ← Full guide
+  2. QUICK_START_CPANEL.md       ← Quick version
+  3. server/README.md            ← Server docs
+
+═══════════════════════════════════════════════════════════
+
+🎯 YOUR DECISION:
+
+I have cPanel hosting:
+  → Go to: START_HERE_PHP.txt ✅
+
+I have VPS/Cloud server:
+  → Go to: DEPLOYMENT.md
+
+I'm not sure:
+  → Go to: START_HERE_PHP.txt ✅ (safer choice)
+
+═══════════════════════════════════════════════════════════
+
+💡 CAN I SWITCH LATER?
+
+YES! Both versions use identical:
+  • Data format (JSON for location, PCM for audio)
+  • Folder structure (data/locations/, data/audio/)
+  • API endpoints (same structure)
+
+To switch:
+  1. Stop current server
+  2. Deploy other version
+  3. Copy data/ folder
+  4. Update SERVER_URL in Android app
+  5. Done!
+
+═══════════════════════════════════════════════════════════
+
+⏱️ SETUP TIME COMPARISON:
+
+PHP Version:
+  Upload files:        5 min
+  Set permissions:     1 min
+  Configure app:       3 min
+  Install & test:      5 min
+  ─────────────────────────
+  Total:              14 min
+
+Node.js Version:
+  Upload files:        5 min
+  Setup Node.js app:   5 min
+  npm install:         3 min
+  Configure & start:   2 min
+  Configure app:       3 min
+  Install & test:      5 min
+  ─────────────────────────
+  Total:              23 min
+
+═══════════════════════════════════════════════════════════
+
+🎉 FINAL RECOMMENDATION:
+
+For cPanel users → PHP VERSION! 🚀
+
+Open: START_HERE_PHP.txt
+
+═══════════════════════════════════════════════════════════

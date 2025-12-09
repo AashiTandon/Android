@@ -1,0 +1,172 @@
+═══════════════════════════════════════════════════════════
+   DATA MONITOR - YOUR SETUP GUIDE
+═══════════════════════════════════════════════════════════
+
+You have: ✅ cPanel Server + ✅ Android Studio
+
+═══════════════════════════════════════════════════════════
+
+📁 FILES YOU NEED:
+
+For cPanel:
+  └─ data-monitor-server.zip (create from /workspace/server/)
+
+For Android Studio:
+  └─ /workspace/ (entire folder)
+
+═══════════════════════════════════════════════════════════
+
+🚀 FOLLOW THESE GUIDES IN ORDER:
+
+1. STEP_BY_STEP_CHECKLIST.md  👈 START HERE!
+   ├─ Detailed checklist
+   ├─ Check off each step
+   └─ For beginners
+
+2. CPANEL_DEPLOYMENT_GUIDE.md
+   ├─ Complete cPanel guide
+   ├─ Troubleshooting
+   └─ Alternative hosting options
+
+3. QUICK_START_CPANEL.md
+   ├─ Ultra-short version
+   └─ For experienced users
+
+═══════════════════════════════════════════════════════════
+
+⏱️ ESTIMATED TIME:
+
+Total: 45-60 minutes
+
+  ├─ Prepare files:        5 min
+  ├─ Deploy to cPanel:    15 min
+  ├─ Setup Android:       10 min
+  ├─ Install app:          5 min
+  ├─ Grant permissions:    5 min
+  └─ Test & verify:        5 min
+
+═══════════════════════════════════════════════════════════
+
+🎯 QUICK OVERVIEW:
+
+PART 1: SERVER (cPanel)
+  1. Create ZIP of server folder
+  2. Upload to cPanel File Manager
+  3. Setup Node.js app in cPanel
+  4. Run: npm install
+  5. Start the app
+  6. Test: http://yourdomain.com/api/health
+
+PART 2: ANDROID APP (Android Studio)
+  1. Open /workspace in Android Studio
+  2. Edit DataUploader.kt → Set your server URL
+  3. Build project
+  4. Connect Android device
+  5. Click Run
+  6. Grant all permissions
+
+PART 3: VERIFY
+  1. Check notifications on phone
+  2. Visit: http://yourdomain.com/api/stats
+  3. Check data files in cPanel
+
+═══════════════════════════════════════════════════════════
+
+✏️ WRITE DOWN YOUR DETAILS:
+
+Your domain: _________________________________________
+
+Server URL:  _________________________________________
+
+cPanel login: ________________________________________
+
+App folder in cPanel: ________________________________
+
+═══════════════════════════════════════════════════════════
+
+🔧 IMPORTANT FILE TO EDIT:
+
+Location: app/src/main/java/com/example/datamonitor/network/DataUploader.kt
+
+Change this line:
+  private const val SERVER_URL = "http://YOUR_SERVER_IP:3000"
+
+To your actual URL:
+  private const val SERVER_URL = "http://yourdomain.com"
+
+═══════════════════════════════════════════════════════════
+
+❓ TROUBLESHOOTING:
+
+Problem: Can't find Node.js in cPanel
+→ Contact your hosting provider
+→ Or use alternative hosting (see guide)
+
+Problem: App won't connect to server
+→ Check server URL is correct
+→ Test in browser first
+→ Make sure no PORT in URL unless cPanel shows one
+
+Problem: Permissions denied
+→ Go to: Settings → Apps → Data Monitor → Permissions
+→ Enable ALL permissions manually
+
+Full troubleshooting: See CPANEL_DEPLOYMENT_GUIDE.md
+
+═══════════════════════════════════════════════════════════
+
+⚠️  LEGAL WARNING:
+
+This app collects:
+  • GPS location continuously
+  • Audio recordings continuously
+
+YOU MUST:
+  ✓ Obtain written consent
+  ✓ Use only legally
+  ✓ Comply with all laws
+
+Read: PRIVACY_WARNING.md
+
+═══════════════════════════════════════════════════════════
+
+📚 ALL DOCUMENTATION FILES:
+
+Main Guides:
+  • STEP_BY_STEP_CHECKLIST.md    ← Detailed checklist
+  • CPANEL_DEPLOYMENT_GUIDE.md   ← Complete cPanel guide
+  • QUICK_START_CPANEL.md        ← Short version
+  • YOUR_SETUP_SUMMARY.txt       ← This file
+
+General Documentation:
+  • README.md                    ← Full project docs
+  • SETUP_GUIDE.md              ← General setup
+  • DEPLOYMENT.md               ← Production deployment
+  • PROJECT_SUMMARY.md          ← Project overview
+  
+Important:
+  • PRIVACY_WARNING.md          ← Legal requirements
+  • LICENSE                     ← License & terms
+
+═══════════════════════════════════════════════════════════
+
+✅ SUCCESS CHECKLIST:
+
+□ Server responds at: http://yourdomain.com/api/health
+□ App installed on Android device
+□ All permissions granted
+□ Two notifications showing (Location + Audio)
+□ Stats API shows increasing numbers
+□ Files appearing in cPanel data folder
+
+═══════════════════════════════════════════════════════════
+
+🎉 READY TO START?
+
+→ Open: STEP_BY_STEP_CHECKLIST.md
+→ Follow each step
+→ Check off as you go
+
+Good luck! 🚀
+
+═══════════════════════════════════════════════════════════
